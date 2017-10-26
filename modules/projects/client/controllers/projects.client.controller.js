@@ -3,12 +3,12 @@
 
   // Projects controller
   angular
-    .module('projects')
+    .module('projects',['geolocation'])
     .controller('ProjectsController', ProjectsController);
 
-  ProjectsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'projectResolve'];
+  ProjectsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'projectResolve', 'geolocation'];
 
-  function ProjectsController ($scope, $state, $window, Authentication, project) {
+  function ProjectsController ($scope, $state, $window, Authentication, project, geolocation) {
     var vm = this;
 
     vm.authentication = Authentication;
